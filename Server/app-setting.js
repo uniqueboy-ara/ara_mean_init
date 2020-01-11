@@ -4,11 +4,11 @@ module.exports = {
         mongo: {
             main: {
                 name: 'DB_NAME',
-                address: '127.0.0.1:27017'
+                address: 'mongo:27017'
             },
             log: {
                 name: 'DB_NAME_log',
-                address: '127.0.0.1:27017'
+                address: 'mongo:27017'
             }
         }
     },
