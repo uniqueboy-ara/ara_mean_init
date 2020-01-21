@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Log = require('../models/log.model');
-const { GetAll, Insert, DeleteById } = require('../util/GenericMethods');
+const { GetAll, Insert, DeleteById } = require('../util/genericMethods');
 
 router.route('/:id?')
   .get(async (req, res) => await GetAll(Log, req, res))
