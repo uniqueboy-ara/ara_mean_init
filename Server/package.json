@@ -1,5 +1,5 @@
 {
-  "name": "ara_server",
+  "name": "e-bcts_api",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
