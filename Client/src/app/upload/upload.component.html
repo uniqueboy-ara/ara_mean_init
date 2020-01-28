@@ -1,0 +1,19 @@
+<div class="content text-center m-2">
+  <div class="dropzone" fileDrop (filesDropped)="handleDrop($event)">
+    <h4>Drop file(s) here</h4>
+    <i class="fa fa-cloud-upload fa-2x"></i>
+  </div>
+  <button
+    dir="ltr"
+    [disabled]="filesToUpload.length == 0"
+    *ngIf="!autoUpload"
+    class="btn btn-block btn-primary btn-dropbox mt-1"
+    (click)="Upload()"
+  >
+    <span *ngIf="filesToUpload.length > 0; else nothing">
+      Upload {{ filesToUpload.length }} file(s)</span
+    >
+    <ng-template #nothing>Nothing to upload</ng-template>
+  </button>
+  <ul></ul>
+</div>

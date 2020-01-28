@@ -3,12 +3,12 @@ module.exports = {
     db: {
         mongo: {
             main: {
-                name: 'DB_NAME',
-                address: 'mongo:27017'
+                name: 'AD-SERVER-DB',
+                address: '127.0.0.1:27017'
             },
             log: {
-                name: 'DB_NAME_log',
-                address: 'mongo:27017'
+                name: 'AD-SERVER-DB-log',
+                address: '127.0.0.1:27017'
             }
         }
     },

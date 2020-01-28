@@ -5,12 +5,15 @@ const app = express()
 const server = require('http').createServer(app);
 const setting = require('./app-setting')
 const path = require('path')
+const fileUpload = require('express-fileupload')
 
-app.use(cors())
+app.use(fileUpload());
+app.use(cors());
+app.use(require('./bootstrap/init'));
 app.use(express.json());
 app.use(express.static(__dirname + '/www'));
 app.use(require('./middleware/log'))
-app.use(require('./bootstrap/init'));
+
 
 require('./bootstrap/mongodb');
 require('./routes')(app);

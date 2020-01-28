@@ -1,20 +1,21 @@
 {
-  "name": "e-bcts_api",
+  "name": "ad-server",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "dependencies": {
     "ara-persian-cal": "^1.1.1",
     "cors": "^2.8.5",
     "crypto-js": "^3.1.9-1",
-    "express": "^4.16.4",
+    "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
+    "express-fileupload": "^1.1.6",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.15",
     "md5": "^2.2.1",
-    "mongoose": "^5.4.20",
+    "mongoose": "5.4.20",
     "socket.io": "^2.3.0"
   }
 }
