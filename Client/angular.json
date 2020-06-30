@@ -11,7 +11,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "../Server/www",
+            "aot": true,
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "tsConfig": "src/tsconfig.app.json",
@@ -21,18 +22,25 @@
               "src/favicon.ico"
             ],
             "styles": [
+              "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
+              "node_modules/prismjs/plugins/toolbar/prism-toolbar.css",
+              "src/assets/css/animate.min.css",
               "src/assets/css/demo.css",
-              "src/assets/sass/app.scss",
+              "src/assets/sass/core.scss",
               "src/styles.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "src/assets/vendor/pace/pace.min.js"
             ]
           },
           "configurations": {
             "production": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -105,7 +113,7 @@
     },
     "matngular-e2e": {
       "root": "",
-      "sourceRoot": "e2e",
+      "sourceRoot": "",
       "projectType": "application",
       "architect": {
         "e2e": {
@@ -133,10 +141,13 @@
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
-      "styleext": "scss"
+      "style": "scss"
     },
     "@schematics/angular:directive": {
       "prefix": "app"
     }
+  },
+  "cli": {
+    "analytics": "9e472cbb-4d61-46ce-9a7c-5eae6a406034"
   }
 }

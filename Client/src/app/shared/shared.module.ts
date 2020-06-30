@@ -1,67 +1,81 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgSelectModule } from '@ng-select/ng-select';
-import { TranslateModule } from '@ngx-translate/core';
-import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OverlayModule } from '@angular/cdk/overlay';
 
-import { SidebarDirective } from './directives/sidebar.directive';
-import { SidebarAnchorToggleDirective } from './directives/sidebaranchortoggle.directive';
-import { SidebarLinkDirective } from './directives/sidebarlink.directive';
-import { SidebarListDirective } from './directives/sidebarlist.directive';
-import { SidebarToggleDirective } from './directives/sidebartoggle.directive';
-import { ToggleFullscreenDirective } from './directives/toggle-fullscreen.directive';
-import { FooterComponent } from './footer/footer.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateModule } from '@ngx-translate/core';
+import { PerfectScrollbarModule } from "ngx-perfect-scrollbar";
+import { ClickOutsideModule } from 'ng-click-outside';
+
+import { AutocompleteModule } from './components/autocomplete/autocomplete.module';
+import { PipeModule } from 'app/shared/pipes/pipe.module';
+
+//COMPONENTS
+import { FooterComponent } from "./footer/footer.component";
+import { NavbarComponent } from "./navbar/navbar.component";
+import { HorizontalMenuComponent } from './horizontal-menu/horizontal-menu.component';
+import { VerticalMenuComponent } from "./vertical-menu/vertical-menu.component";
+import { CustomizerComponent } from './customizer/customizer.component';
 import { NotificationSidebarComponent } from './notification-sidebar/notification-sidebar.component';
-import { FixLengthPipe } from './pipes/fix-length.pipe';
-import { PersianDatePipe } from './pipes/persian-date.pipe';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { JalaliDatePickerComponent } from './user-control/jalali-date-picker/jalali-date-picker.component';
+
+//DIRECTIVES
+import { ToggleFullscreenDirective } from "./directives/toggle-fullscreen.directive";
+import { SidebarLinkDirective } from './directives/sidebar-link.directive';
+import { SidebarDropdownDirective } from './directives/sidebar-dropdown.directive';
+import { SidebarAnchorToggleDirective } from './directives/sidebar-anchor-toggle.directive';
+import { SidebarDirective } from './directives/sidebar.directive';
+import { TopMenuDirective } from './directives/topmenu.directive';
+import { TopMenuLinkDirective } from './directives/topmenu-link.directive';
+import { TopMenuDropdownDirective } from './directives/topmenu-dropdown.directive';
+import { TopMenuAnchorToggleDirective } from './directives/topmenu-anchor-toggle.directive';
+
 
 @NgModule({
     exports: [
         CommonModule,
         FooterComponent,
         NavbarComponent,
-        SidebarComponent,
+        VerticalMenuComponent,
+        HorizontalMenuComponent,
+        CustomizerComponent,
         NotificationSidebarComponent,
         ToggleFullscreenDirective,
         SidebarDirective,
+        TopMenuDirective,
         NgbModule,
         TranslateModule,
-        FixLengthPipe,
-        NgSelectModule,
-        FormsModule,
-        PersianDatePipe,
-        JalaliDatePickerComponent,
-        JalaliDatePickerComponent
     ],
     imports: [
         RouterModule,
         CommonModule,
         NgbModule,
         TranslateModule,
-        PerfectScrollbarModule,
         FormsModule,
-        NgSelectModule
+        OverlayModule,
+        ReactiveFormsModule ,
+        PerfectScrollbarModule,
+        ClickOutsideModule,
+        AutocompleteModule,
+        PipeModule
     ],
     declarations: [
         FooterComponent,
         NavbarComponent,
-        SidebarComponent,
+        VerticalMenuComponent,
+        HorizontalMenuComponent,
+        CustomizerComponent,
         NotificationSidebarComponent,
         ToggleFullscreenDirective,
-        SidebarDirective,
         SidebarLinkDirective,
-        SidebarListDirective,
+        SidebarDropdownDirective,
         SidebarAnchorToggleDirective,
-        SidebarToggleDirective,
-        FixLengthPipe,
-        PersianDatePipe,
-        JalaliDatePickerComponent,
+        SidebarDirective,
+        TopMenuLinkDirective,
+        TopMenuDropdownDirective,
+        TopMenuAnchorToggleDirective,
+        TopMenuDirective,
     ]
 })
 export class SharedModule { }
